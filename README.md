@@ -4,7 +4,7 @@ This is my implementation of an intcode compiler. It supports all the opcodes fr
 ## supported expressions :
 - Supported operators are : +, -, *, /, %, >, <, >=, <=, ==
 - Nesting operations in parentheses is also possible
--It supports also the ternary operator b ? op1 : op2 used in mapy languages. I thought about this just to use jump instructions 
+- It supports also the ternary operator b ? op1 : op2 used in mapy languages. I thought about this just to use jump instructions 
 
 ## How to use :
 Just compile with a C++ compiler 

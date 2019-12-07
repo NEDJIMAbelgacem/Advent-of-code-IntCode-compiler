@@ -33,6 +33,20 @@ std::string instruction_mnemonic(int instr) {
     return "";
 }
 
+InstrCode get_instr(std::string opr) {
+    if (opr == "*") return MULT;
+    if (opr == "/") return DIV;
+    if (opr == "+") return ADD;
+    if (opr == "-") return SUB;
+    if (opr == "%") return MOD;
+    if (opr == "<") return LT;
+    if (opr == "==") return EQL;
+    if (opr == ">") return GT;
+    if (opr == ">=") return GTEQL;
+    if (opr == "<=") return LTEQL;
+    return HALT;
+};
+
 int instr_length(int instr) {
     switch(instr % 100) {
             case MULT:
@@ -202,19 +216,6 @@ struct Node {
     }
 
     std::vector<int> assemble() {
-        auto get_instr = [](std::string opr) -> InstrCode {
-            if (opr == "*") return MULT;
-            if (opr == "/") return DIV;
-            if (opr == "+") return ADD;
-            if (opr == "-") return SUB;
-            if (opr == "%") return MOD;
-            if (opr == "<") return LT;
-            if (opr == "==") return EQL;
-            if (opr == ">") return GT;
-            if (opr == ">=") return GTEQL;
-            if (opr == "<=") return LTEQL;
-            return HALT;
-        };
         std::vector<int> children_borders;
         std::vector<int> children_assembly;
         if (content == "?:") {
